@@ -40,7 +40,56 @@
 
 
 
+# Run your own myjenkins-blueocean:2.414.2-1 image as a container in Docker using the following docker run command:
 
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/5b599d28-6b9a-4f12-b241-fdba289277be)
+
+
+
+
+
+# Proceed to the Post-installation setup wizard.
+# https://www.jenkins.io/doc/book/installing/docker/#setup-wizard
+
+
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/2aa6c9a7-a099-47de-81d3-c262fbc797f3)
+
+
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/ecf8abf7-7ebd-4aca-aed5-15fa58ecaa82)
+
+
+
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/e349a3e1-bf8d-4a42-b34d-ba2a7743d2b0)
+
+
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/ca3b75e4-9d59-4844-8475-d1fe97a7f58e)
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/8713286e-feb6-44fa-a16a-c4b52f372814)
+
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/2caa691d-389c-4723-8001-edd30cdf1875)
+
+
+# Create First Admin User
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/9dd3e882-eb18-4d26-9946-984f6dc7c78a)
+
+
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/b052e268-06e5-42a0-9d37-3c7d34861adf)
+
+
+
+
+
+
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/47ff4187-4081-499a-ad60-295ea7b5a3dc)
 
 
 
