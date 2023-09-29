@@ -6,13 +6,16 @@
 
 
 
+# Create a bridge network in Docker using the following docker network create command:
 
-# docker network create jenkins
 
 
 ![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/b1ee2165-23e8-4951-a2db-f95473f06088)
 
 
+
+
+# In order to execute Docker commands inside Jenkins nodes, download and run the docker:dind Docker image using the following docker run command:
 
 ![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/ce1e8ebe-679d-4d82-9416-a8c763d0acf8)
 
