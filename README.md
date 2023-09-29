@@ -105,6 +105,49 @@
 
 
 
+# docker exec -it — user=root <Container_Name or Container_Id> /bin/bash
+# docker exec -it — user=root <Container_Name or Container_Id> /bin/bash
+# docker exec -it — user=root <Container_Name or Container_Id> /bin/bash
+# docker exec -it — user=root <Container_Name or Container_Id> /bin/bash
+# docker exec -it — user=root <Container_Name or Container_Id> /bin/bash
+# docker exec -it — user=root <Container_Name or Container_Id> /bin/bash
+# docker exec -it — user=root <Container_Name or Container_Id> /bin/bash
+# docker exec -it — user=root <Container_Name or Container_Id> /bin/bash
+# docker exec -it — user=root <Container_Name or Container_Id> /bin/bash
+
+
+# apt-get update
+# apt-get install vim
+# /var/jenkins_home
+# vi config.xml
+
+#  vi docker-compose.yml  
+  version: '3'
+  services:
+    jenkins:
+      container_name: 'jenkins'
+      image: 'jenkins/jenkins:latest'
+      restart: always
+      ports:
+        - 19800:8080
+        - 19801:50000
+      volumes:
+        - ./jenkins:/var/jenkins_home
+      environment:
+        TZ: "Asiz/Seoul"
+
+
+ # 
+ # 
+ # 
+ # 
+ # 
+ # 
+ # 
+ # 
+
+
+
 
 
 
