@@ -137,12 +137,28 @@
         TZ: "Asiz/Seoul"
 
 
+ # service --status-all
  # 
- # 
- # 
- # 
- # 
- # 
+ #  docker pull jenkins/jenkins:lts
+ # $ sudo docker run -d -p 8080:8080 -v /jenkins:/var/jenkins_home --name jenkins -u root jenkins/jenkins:lts
+ # sudo docker-compose up -d
+      
+      version: "3"
+      services:
+        jenkins:
+          image: jenkins/jenkins:lts
+          user: root
+          volumes:
+            - ./jenkins:/var/jenkins_home
+          ports:
+            - 8080:8080  
+
+
+
+
+ 
+ #  Jenkins 관리 > Script Console 에서 위의 스크립트를 입력하여 타임존을 서울로 설정
+   System.setProperty('org.apache.commons.jelly.tags.fmt.timeZone
  # 
  # 
 
