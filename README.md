@@ -92,6 +92,7 @@
 ![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/47ff4187-4081-499a-ad60-295ea7b5a3dc)
 
 
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/ca983627-b707-42e9-abe1-22ef08c12b5a)
 
 
 
