@@ -240,7 +240,28 @@
 
 
 
-
+# initialAdminPassword
+    
+    root@kpismain:~/jenkins/jenkins# docker container exec -it jenkins bash
+    jenkins@6f0f08a5db8c:/$ pwd
+    /
+    jenkins@6f0f08a5db8c:/$ cd /var/jenkins_home/
+    jenkins@6f0f08a5db8c:~$ ll
+    bash: ll: command not found
+    jenkins@6f0f08a5db8c:~$ ls
+    config.xml               hudson.model.UpdateCenter.xml     jobs              nodes    queue.xml.bak  secret.key.not-so-secret  updates      users
+    copy_reference_file.log  jenkins.telemetry.Correlator.xml  nodeMonitors.xml  plugins  secret.key     secrets                   userContent  war
+    jenkins@6f0f08a5db8c:~$ cd secret
+    bash: cd: secret: No such file or directory
+    jenkins@6f0f08a5db8c:~$ cd secrets/
+    jenkins@6f0f08a5db8c:~/secrets$ ll
+    bash: ll: command not found
+    jenkins@6f0f08a5db8c:~/secrets$ ls
+    initialAdminPassword  jenkins.model.Jenkins.crumbSalt  master.key
+    jenkins@6f0f08a5db8c:~/secrets$ cat initialAdminPassword
+    e283b74f77014266814da8a98d983804
+    jenkins@6f0f08a5db8c:~/secrets$ pwd
+    /var/jenkins_home/secrets
 
 
 
