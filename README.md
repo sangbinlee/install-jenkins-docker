@@ -209,7 +209,34 @@
     root@kpismain:~/jenkins#
 
 
-
+    
+    
+    drwxrwxrwx 12 root root 4096 Sep 30 10:48 jenkins/
+    root@kpismain:~/jenkins# cd jenkins/
+    root@kpismain:~/jenkins/jenkins# ll
+    total 76
+    drwxrwxrwx 12 root   root   4096 Sep 30 10:48 ./
+    drwxr-xr-x  3 root   root   4096 Sep 30 10:48 ../
+    drwxr-xr-x  3 master master 4096 Sep 30 10:42 .cache/
+    -rw-r--r--  1 master master 1661 Sep 30 10:48 config.xml
+    -rw-r--r--  1 master master  102 Sep 30 10:48 copy_reference_file.log
+    -rw-r--r--  1 master master  156 Sep 30 10:48 hudson.model.UpdateCenter.xml
+    drwxr-xr-x  3 master master 4096 Sep 30 10:42 .java/
+    -rw-r--r--  1 master master  171 Sep 30 10:42 jenkins.telemetry.Correlator.xml
+    drwxr-xr-x  2 master master 4096 Sep 30 10:42 jobs/
+    -rw-r--r--  1 master master    0 Sep 30 10:48 .lastStarted
+    -rw-r--r--  1 master master  907 Sep 30 10:48 nodeMonitors.xml
+    drwxr-xr-x  2 master master 4096 Sep 30 10:42 nodes/
+    drwxr-xr-x  2 master master 4096 Sep 30 10:42 plugins/
+    -rw-r--r--  1 master master  129 Sep 30 10:48 queue.xml.bak
+    -rw-r--r--  1 master master   64 Sep 30 10:42 secret.key
+    -rw-r--r--  1 master master    0 Sep 30 10:42 secret.key.not-so-secret
+    drwx------  2 master master 4096 Sep 30 10:42 secrets/
+    drwxr-xr-x  2 master master 4096 Sep 30 10:48 updates/
+    drwxr-xr-x  2 master master 4096 Sep 30 10:42 userContent/
+    drwxr-xr-x  3 master master 4096 Sep 30 10:42 users/
+    drwxr-xr-x 10 master master 4096 Sep 30 10:42 war/
+    root@kpismain:~/jenkins/jenkins#
 
 
 
