@@ -159,8 +159,56 @@
  
  #  Jenkins 관리 > Script Console 에서 위의 스크립트를 입력하여 타임존을 서울로 설정
    System.setProperty('org.apache.commons.jelly.tags.fmt.timeZone
- # 
- # 
+
+
+ # /root/jenkins
+    root@kpismain:~/jenkins# pwd
+    /root/jenkins
+     
+    root@kpismain:~/jenkins# ll
+    total 16
+    drwxr-xr-x  3 root root 4096 Sep 30 10:44 ./
+    drwx------ 20 root root 4096 Sep 30 10:44 ../
+    -rw-r--r--  1 root root  258 Sep 30 10:39 docker-compose.yml
+    drwxrwxrwx 12 root root 4096 Sep 30 10:42 jenkins/
+    root@kpismain:~/jenkins#
+
+ 
+ 
+ #  vi docker-compose.yml
+
+    
+    version: '3'
+    services:
+      jenkins:
+        container_name: 'jenkins'
+        image: 'jenkins/jenkins:latest'
+        restart: always
+        ports:
+          - 8081:8080
+          - 50001:50000
+        volumes:
+          - ./jenkins:/var/jenkins_home
+        environment:
+          TZ: "Asiz/Seoul"
+    ~
+
+ # chmod -R 777 jenkins
+ # docker compose up -d
+ #  docker compose down
+    
+         
+    root@kpismain:~/jenkins# ll
+    total 16
+    drwxr-xr-x  3 root root 4096 Sep 30 10:40 ./
+    drwx------ 20 root root 4096 Sep 30 10:39 ../
+    -rw-r--r--  1 root root  258 Sep 30 10:39 docker-compose.yml
+    drwxrwxrwx 12 root root 4096 Sep 30 10:42 jenkins/
+    root@kpismain:~/jenkins#
+
+
+
+
 
 
 
