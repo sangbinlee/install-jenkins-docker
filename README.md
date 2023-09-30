@@ -194,7 +194,9 @@
     ~
 
  # chmod -R 777 jenkins
+ 
  # docker compose up -d
+ 
  #  docker compose down
     
          
