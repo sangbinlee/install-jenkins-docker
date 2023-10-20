@@ -367,6 +367,10 @@
 
 
 
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/dd47698f-5f90-4f81-b723-3d2cd3223130)
 
-![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/db5f3e2d-b493-4c9f-97eb-fc9e78f37764)
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/26542255-eea6-48eb-876c-2fcd27e1d257)
+
+
+
 
