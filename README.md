@@ -373,4 +373,26 @@
 
 
 
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/444b2f27-15bd-45fd-92c8-b2d8d37883ac)
+
+
+
+
+# example
+    sudo mkdir -p /private/var/jenkins_home
+    sudo chown -R 1000:1000 /private/var/jenkins_home
+
+    docker run -d -p 8080:8080 -p 50000:50000 -v /private/var/jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --name jenkins maole01/jenkins
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/6b5dc8a2-f06f-45be-9da5-24d3024d8c22)
+
+    ERROR ON AWS #INSTANCE### i have tried its working
+    touch: cannot touch /var/jenkins_home/copy_reference_file.log: Permission denied
+    while installing jenkins from docker image . By defalut jenkins user is create
+    so create create a dir
+    
+    mkdir /var/jenkins_home
+    chmod 777 /var/jenkins_home
+    chown jenkins:jenkins /var/jenkins_home
+    docker run --name jenkins-test -p 8080:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jenkins
 
