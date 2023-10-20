@@ -424,4 +424,91 @@
 
 
 
-                 
+# https://medium.com/igorgsousa-tech/docker-in-docker-with-jenkins-permission-problem-637f45549947
+
+# Docker in Docker with Jenkins : Permission problem
+
+    
+    Why this problem happens?
+    This problem happens because jenkins container uses by default the user jenkins from the group jenkins and this groupd doesn’t have enough permissions to access the folder /var/run/docker.sock.
+
+    
+    
+    root@master:~/jenkins# ll
+    total 16
+    drwxr-xr-x  3 root root 4096 Oct 21 01:44 ./
+    drwx------ 14 root root 4096 Oct 21 02:24 ../
+    -rw-r--r--  1 root root  369 Oct 21 00:30 docker-compose.yml
+    drwxrwxrwx 18 root root 4096 Oct 21 02:40 jenkins/
+    root@master:~/jenkins# cat docker-compose.yml
+    version: '3'
+    services:
+      jenkins:
+        container_name: 'jenkins'
+        image: 'jenkins/jenkins:jdk17'
+        restart: always
+        privileged: true
+        ports:
+          - 8080:8080
+          - 50000:50000
+        volumes:
+          - ./jenkins:/var/jenkins_home
+          - /var/run/docker.sock:/var/run/docker.sock
+          - /usr/bin/docker:/usr/bin/docker
+        environment:
+          TZ: "Asiz/Seoul"
+    
+    root@master:~/jenkins# ls -l /var/run/docker.sock
+    srw-rw---- 1 root docker 0 Oct 21 01:31 /var/run/docker.sock
+    root@master:~/jenkins#
+    
+
+# chmod 666 /var/run/docker.sock
+
+    
+    root@master:/var/run# ll dock*
+    -rw-r--r-- 1 root root     5 Oct 21 01:31 docker.pid
+    srw-rw---- 1 root docker   0 Oct 21 01:31 docker.sock=
+    
+    docker:
+    total 0
+    drwx------  8 root root  180 Oct 21 01:31 ./
+    drwxr-xr-x 34 root root 1040 Oct 21 04:48 ../
+    drwxr-xr-x  6 root root  120 Oct 21 04:50 containerd/
+    drw-------  2 root root   60 Oct 21 01:31 libnetwork/
+    srwxr-xr-x  1 root root    0 Oct 21 01:31 metrics.sock=
+    drwxr-xr-x  2 root root  120 Oct 21 04:50 netns/
+    drwx------  2 root root   40 Oct 20 21:27 plugins/
+    drwx------  3 root root   60 Oct 20 21:27 runtime-runc/
+    drwx------  2 root root   40 Oct 20 21:27 swarm/
+    root@master:/var/run# chmod 666 /var/run/docker.sock
+    root@master:/var/run# ll
+    total 32
+    drwxr-xr-x 34 root root   1040 Oct 21 04:48 ./
+    drwxr-xr-x 23 root root   4096 Oct  2 01:28 ../
+    -rw-------  1 root root      0 Oct 20 21:27 agetty.reload
+    drwxr-xr-x  2 root root     60 Oct 20 21:27 blkid/
+    drwxr-xr-x  3 root root    300 Oct 20 21:28 cloud-init/
+    drwxr-xr-x  2 root root     80 Oct 20 21:27 console-setup/
+    drwx--x--x  5 root root    140 Oct 21 01:30 containerd/
+    drwxr-xr-x  3 root root     60 Oct 20 21:27 credentials/
+    -rw-r--r--  1 root root      4 Oct 20 21:27 crond.pid
+    ----------  1 root root      0 Oct 20 21:27 crond.reboot
+    drwx------  2 root root     40 Oct 20 21:27 cryptsetup/
+    drwxr-xr-x  2 root root     60 Oct 20 21:27 dbus/
+    prw-------  1 root root      0 Oct 20 21:27 dmeventd-client|
+    prw-------  1 root root      0 Oct 20 21:27 dmeventd-server|
+    drwx------  8 root root    180 Oct 21 01:31 docker/
+    -rw-r--r--  1 root root      5 Oct 21 01:31 docker.pid
+    srw-rw-rw-  1 root docker    0 Oct 21 01:31 docker.sock=
+
+
+
+
+
+
+
+
+
+
+
