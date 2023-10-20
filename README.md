@@ -509,6 +509,119 @@
 
 
 
+# jenkins - Pipeline script
+    pipeline {
+        agent any
+    
+        tools {
+            jdk('jdk17')
+        }
+        stages {
+            stage('■■■■■■■■■ ■■■■■■■■■ version') {
+                steps {
+                    echo 'Hello World'
+                    script {
+                    	sh "java -version"
+                    }
+                }
+            }
+            
+            stage('■■■■■■■■■ ■■■■■■■■■ clone Prepare') {
+                steps {
+                    git branch: 'main', credentialsId: 'sangbinlee',
+                        url: 'https://github.com/sangbinlee/catalog-back.git'
+                }
+                
+                post {
+                    success { 
+                        sh 'echo "Successfully Cloned Repository"'
+                    }
+                    failure {
+                        sh 'echo "Fail Cloned Repository"'
+                    }
+                }    
+            }
+            
+            stage('■■■■■■■■■ ■■■■■■■■■ Build') { 
+                steps {
+                	// gralew이 있어야됨. git clone해서 project를 가져옴.
+                    sh 'chmod +x gradlew'
+                    //sh  './gradlew clean bootJar'
+                    // sh  './gradlew clean build'
+                    sh  './gradlew build --warning-mode all'
+    
+    
+                    sh 'ls -al ./build'
+                }
+                post {
+                    success {
+                        echo '■■■■■■■■■ gradle build success'
+                    }
+    
+                    failure {
+                        echo '■■■■■■■■■ gradle build failed'
+                    }
+                }
+            }
+            stage('■■■■■■■■■ ■■■■■■■■■ Test') { 
+                steps {
+                    echo  '테스트 단계와 관련된 몇 가지 단계를 수행합니다.'
+                }
+            }
+            stage('■■■■■■■■■ ■■■■■■■■■ Docker Rm') {
+                steps {
+                    sh 'echo "■■■■■■■■■ Docker Rm Start"'
+                    sh """
+                     docker stop catalog-back
+                     docker rm catalog-back
+                     docker rmi -f sangbinlee/catalog-back
+                    """
+                }
+                
+                post {
+                    success { 
+                        sh 'echo "Docker Rm Success"'
+                    }
+                    failure {
+                        sh 'echo "Docker Rm Fail"'
+                    }
+                }
+            }
+            
+            stage('■■■■■■■■■ ■■■■■■■■■ Dockerizing'){
+                steps{
+                    sh 'echo "■■■■■■■■■  Image Bulid Start"'
+                    sh 'docker build -t sangbinlee/catalog-back .'
+                }
+                post {
+                    success {
+                        sh 'echo "Bulid Docker Image Success"'
+                    }
+    
+                    failure {
+                        sh 'echo "Bulid Docker Image Fail"'
+                    }
+                }
+            }
+            
+            stage('Deploy') {
+                steps {
+                    sh 'docker run --name catalog-back -d -p 7080:7080 sangbinlee/catalog-back'
+                }
+    
+                post {
+                    success {
+                        echo 'success'
+                    }
+    
+                    failure {
+                        echo 'failed'
+                    }
+                }
+            }
+            
+        }
+    }
 
 
 
