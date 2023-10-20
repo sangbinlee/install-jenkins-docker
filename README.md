@@ -295,4 +295,77 @@
     /var/jenkins_home/secrets
 
 
+# docker compose up
+    
+    
+    root@master:~/jenkins# ll
+    total 16
+    drwxr-xr-x  3 root root 4096 Oct 21 01:44 ./
+    drwx------ 14 root root 4096 Oct 21 01:21 ../
+    -rw-r--r--  1 root root  369 Oct 21 00:30 docker-compose.yml
+    drwxrwxrwx  2 root root 4096 Oct 21 01:44 jenkins/
+    root@master:~/jenkins# docker compose up
+    [+] Running 1/0
+     ✔ Container jenkins  Created                                                                                                                0.1s
+    Attaching to jenkins
+    jenkins  | Running from: /usr/share/jenkins/jenkins.war
+    jenkins  | webroot: /var/jenkins_home/war
+    jenkins  | 2023-10-20 16:53:27.436+0000 [id=1]  INFO    winstone.Logger#logInternal: Beginning extraction from war file
+    jenkins  | 2023-10-20 16:53:28.457+0000 [id=1]  WARNING o.e.j.s.handler.ContextHandler#setContextPath: Empty contextPath
+    jenkins  | 2023-10-20 16:53:28.535+0000 [id=1]  INFO    org.eclipse.jetty.server.Server#doStart: jetty-10.0.17; built: 2023-10-02T04:04:10.314Z; g                          it: a0f5f05abaa6c3aabb7c3d35f10a6f412ab8b05f; jvm 17.0.8.1+1
+    jenkins  | 2023-10-20 16:53:28.843+0000 [id=1]  INFO    o.e.j.w.StandardDescriptorProcessor#visitServlet: NO JSP Support for /, did not find org.e                          clipse.jetty.jsp.JettyJspServlet
+    jenkins  | 2023-10-20 16:53:28.900+0000 [id=1]  INFO    o.e.j.s.s.DefaultSessionIdManager#doStart: Session workerName=node0
+    jenkins  | 2023-10-20 16:53:29.421+0000 [id=1]  INFO    hudson.WebAppMain#contextInitialized: Jenkins home directory: /var/jenkins_home found at:                           EnvVars.masterEnvVars.get("JENKINS_HOME")
+    jenkins  | 2023-10-20 16:53:29.548+0000 [id=1]  INFO    o.e.j.s.handler.ContextHandler#doStart: Started w.@4d8286c4{Jenkins v2.428,/,file:///var/j                          enkins_home/war/,AVAILABLE}{/var/jenkins_home/war}
+    jenkins  | 2023-10-20 16:53:29.564+0000 [id=1]  INFO    o.e.j.server.AbstractConnector#doStart: Started ServerConnector@37ddb69a{HTTP/1.1, (http/1                          .1)}{0.0.0.0:8080}
+    jenkins  | 2023-10-20 16:53:29.579+0000 [id=1]  INFO    org.eclipse.jetty.server.Server#doStart: Started Server@43aaf813{STARTING}[10.0.17,sto=0]                           @2751ms
+    jenkins  | 2023-10-20 16:53:29.581+0000 [id=26] INFO    winstone.Logger#logInternal: Winstone Servlet Engine running: controlPort=disabled
+    jenkins  | 2023-10-20 16:53:29.873+0000 [id=34] INFO    jenkins.InitReactorRunner$1#onAttained: Started initialization
+    jenkins  | 2023-10-20 16:53:29.892+0000 [id=32] INFO    jenkins.InitReactorRunner$1#onAttained: Listed all plugins
+    jenkins  | 2023-10-20 16:53:30.993+0000 [id=34] INFO    jenkins.InitReactorRunner$1#onAttained: Prepared all plugins
+    jenkins  | 2023-10-20 16:53:30.999+0000 [id=35] INFO    jenkins.InitReactorRunner$1#onAttained: Started all plugins
+    jenkins  | 2023-10-20 16:53:31.008+0000 [id=35] INFO    jenkins.InitReactorRunner$1#onAttained: Augmented all extensions
+    jenkins  | 2023-10-20 16:53:31.266+0000 [id=39] INFO    jenkins.InitReactorRunner$1#onAttained: System config loaded
+    jenkins  | 2023-10-20 16:53:31.267+0000 [id=39] INFO    jenkins.InitReactorRunner$1#onAttained: System config adapted
+    jenkins  | 2023-10-20 16:53:31.268+0000 [id=39] INFO    jenkins.InitReactorRunner$1#onAttained: Loaded all jobs
+    jenkins  | 2023-10-20 16:53:31.270+0000 [id=39] INFO    jenkins.InitReactorRunner$1#onAttained: Configuration for all jobs updated
+    jenkins  | 2023-10-20 16:53:31.346+0000 [id=52] INFO    hudson.util.Retrier#start: Attempt #1 to do the action check updates server
+    jenkins  | 2023-10-20 16:53:31.841+0000 [id=35] INFO    jenkins.install.SetupWizard#init:
+    jenkins  |
+    jenkins  | *************************************************************
+    jenkins  | *************************************************************
+    jenkins  | *************************************************************
+    jenkins  |
+    jenkins  | Jenkins initial setup is required. An admin user has been created and a password generated.
+    jenkins  | Please use the following password to proceed to installation:
+    jenkins  |
+    jenkins  | 7212fcf0c0204c0ea6a03b60a8df7d0e
+    jenkins  |
+    jenkins  | This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
+    jenkins  |
+    jenkins  | *************************************************************
+    jenkins  | *************************************************************
+    jenkins  | *************************************************************
+    jenkins  |
+    jenkins  | 2023-10-20 16:53:51.245+0000 [id=34] INFO    jenkins.InitReactorRunner$1#onAttained: Completed initialization
+    jenkins  | 2023-10-20 16:53:51.261+0000 [id=25] INFO    hudson.lifecycle.Lifecycle#onReady: Jenkins is fully up and running
+    jenkins  | 2023-10-20 16:53:52.119+0000 [id=52] INFO    h.m.DownloadService$Downloadable#load: Obtained the updated data file for hudson.tasks.Maven.MavenInstaller
+    jenkins  | 2023-10-20 16:53:52.120+0000 [id=52] INFO    hudson.util.Retrier#start: Performed the action check updates server successfully at the attempt #1
+
+
+
+
+
+
+
+
+
+
+![image](https://github.com/sangbinlee/install-jenkins-docker/assets/4024414/f6a37f74-19ed-457b-9e91-4f26742c8364)
+
+
+
+
+
+
 
