@@ -396,3 +396,23 @@
     chown jenkins:jenkins /var/jenkins_home
     docker run --name jenkins-test -p 8080:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home jenkins
 
+
+
+
+
+#  JENKINS 삭제하기
+    
+    sudo service jenkins stop
+    
+    
+    
+    sudo apt remove jenkins
+    
+    sudo apt-get remove --purge jenkins
+    sudo apt-get remove --auto-remove jenkins
+    
+    sudo find / -name 'jenkins*'
+
+
+
+
