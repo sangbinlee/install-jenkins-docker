@@ -194,6 +194,37 @@
     ~
 
  # chmod -R 777 jenkins
+
+
+
+      
+      root@master:~/jenkins# docker compose ps -a
+      NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+      root@master:~/jenkins# ll
+      total 16
+      drwxr-xr-x  3 root root 4096 Oct 21 01:44 ./
+      drwx------ 14 root root 4096 Oct 21 01:21 ../
+      -rw-r--r--  1 root root  369 Oct 21 00:30 docker-compose.yml
+      drwxr-xr-x  2 root root 4096 Oct 21 01:44 jenkins/
+      root@master:~/jenkins# chmod -R 777 ./jenkins/
+      root@master:~/jenkins# ll
+      total 16
+      drwxr-xr-x  3 root root 4096 Oct 21 01:44 ./
+      drwx------ 14 root root 4096 Oct 21 01:21 ../
+      -rw-r--r--  1 root root  369 Oct 21 00:30 docker-compose.yml
+      drwxrwxrwx  2 root root 4096 Oct 21 01:44 jenkins/
+      root@master:~/jenkins#
+      
+      
+      
+      
+
+
+
+
+
+
+
  
  # docker compose up -d
  
